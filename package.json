@@ -1,0 +1,35 @@
+{
+  "name": "paint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-redis": "^3.3.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "formidable": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "ioredis": "^3.2.2",
+    "log4js": "^2.5.3",
+    "mysql": "^2.15.0",
+    "node-rsa": "^0.4.2",
+    "nodemailer": "^4.6.3",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "author": "ljm",
+  "license": "ISC"
+}

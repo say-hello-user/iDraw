@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iDraw</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_478228_gk1poktyhfnfusor.css">
+	<link rel="stylesheet" href="./dist.min/css/paint.log.min.css">
+</head>
+<body>
+<div id="loading" class="loading">
+	<div id="loading-center">
+		<div id="loading-center-absolute">
+			<div class="object" id="object_one"></div>
+			<div class="object" id="object_two"></div>
+			<div class="object" id="object_three"></div>
+			<div class="object" id="object_four"></div>
+			<div class="object" id="object_five"></div>
+			<div class="object" id="object_six"></div>
+			<div class="object" id="object_seven"></div>
+			<div class="object" id="object_eight"></div>
+			<div class="object" id="object_nine"></div>
+		</div>
+	</div>
+</div>
+	<div class="page-container">
+		<h1>H5 IDraw</h1>
+		<div class="form">
+			<div class="formInput"><input type="text" name="email" id="user" class="username" placeholder="IDraw UserName"></div>
+			<div class="formInput"><input type="password" name="password" id="pass" class="password" placeholder="IDraw PassWord"></div>
+			<div class="formRaio">
+				<input type="radio" id="gameUser" name="userType" value="gameUser" checked = "checked">
+				<label for="gameUser"></label>
+				<span>玩家</span>
+			</div>
+			<div class="formRaio">
+				<input type="radio" id="admin" name="userType" value="admin">
+				<label for="admin"></label>
+				<span>管理员</span>
+			</div>
+			<button id="login">提交</button>
+			<p id="register">注册账号</p>
+		</div>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="https://cdn.bootcss.com/jsencrypt/3.0.0-beta.1/jsencrypt.js"></script>
+	<script src="./src/js/utilJs//util.js"></script>
+    <script src="./src/js/componentJs//share.js"></script>
+    <script src="./src/js/log.js"></script>
+    <script href="javascript:;" type="text/javascript" src="./src/js/pluginJs/iShare_tidy.js"></script>
+</body>
+</html>

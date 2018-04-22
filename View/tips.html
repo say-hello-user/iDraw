@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iDraw</title>
+    <link rel="stylesheet" href="./dist.min/css/paint.log.min.css">
+    <style>
+        .show-tips{
+            width: 90%;
+            margin-left: 5%;
+            height: auto;
+            margin-top: 10%;
+            text-align: center;
+        }
+        .show-tips > span{
+            color: white;
+            font-weight: 900;
+        }
+        .show-tips > a{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    var userName = "<%=userName%>";
+    var tipsText = "<%=tipsText%>";
+    var tips = document.createElement('div');
+    tips.classList.add('show-tips');
+    tips.innerHTML = '<span>亲爱的:'+(userName)+','+(tipsText)+'</span><a href="http://'+(window.location.host)+'">点击进入登录界面</a>';
+    document.body.appendChild(tips);
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+.game-center{
+	width:90%;
+	height: calc(100vh - 100px);
+	margin-left: 5%;
+}
+.gc-close-icon{
+	position: absolute;
+	top: 10px;
+	right:10px;
+}
+
+.gc-ready-icon{
+    position: absolute;
+	top: 10px;
+	right:150px;
+}
+.paint-main{
+	text-align: center;
+}
+.paint-detail{
+	display: inline-block;
+	margin-top: 60px;
+}
+.paintCanvas{
+	float: right;
+}
+.gameUser{
+	float: right;
+	width: 200px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	margin-right: 20px;
+}
+.msgList{
+	float:right ;
+	width: 200px;
+	height: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-align: left;
+	font-size: 12px;
+	margin-left: 20px;
+}
+.draw-util{
+	display: block;
+	width: 300px;
+	margin:10px auto;
+	text-align: center;
+}
+.userList{
+	padding: 20px 20px;
+	margin-top: 45px;
+	text-align: center;
+}
+
+.user{
+	width: 170px;
+	height : 270px;
+	margin-left: 30px;
+}
+.user > i{
+	font-size: 150px;
+	margin-top: 40px;
+}
+.userBottom{
+	bottom: 0px;
+}
+.cur-data{
+	width: 250px;
+	left: 50%;
+	margin-left: -125px;
+	top:36px;
+	text-align: center;
+}
+.curUser,.keyWord{
+	display: inline-block;
+}
+.showDraw{
+	top: 50%;
+	left:50%;
+	margin-top: -175px;
+	margin-left: -200px;
+}
+
+.message{
+	width: 90%;
+	margin-left: 5%;
+	border-radius: 4px;
+}
+.sendInput{
+	width: 90%;
+	margin-left:5px;
+}
+.send{
+	right: 3%;
+}
+.userDiv{
+	width: 100%;
+	height: 60px;
+	padding: 10px 10px;
+}
+.userDiv > p:nth-child(2){
+	font-size: 13px;
+	margin-left: 0px;
+}
+.userDiv > p:nth-child(3){
+	font-size: 13px;
+	margin-left: 50px;
+}
+.avator{
+	position: absolute;
+	top: 10px;
+	left: 0px;
+}
+.leftTime{
+	position: absolute;
+	width: 60px;
+	height:60px;
+	border-radius: 50%;
+	font-weight: 900;
+	font-size: 20px;
+	color:rgb(227,51,74);
+	border:4px solid rgb(74,74,74);
+	padding-top: 15px;
+	box-sizing: border-box;
+	text-align: center;
+	background-color: white;
+	opacity: 1;
+	top: 30px;
+	left:calc(50% + 200px);
+}
+.tips{
+	bottom: 35px;
+	right: 20px;
+}
+.drawIcon{
+	position: absolute;
+	bottom: 25px;
+	left:40px;
+	color: #ef4300;
+	font-size: 20px;
+}
+.myPen,.myErase,.myColor,.addTime,.changeWord{
+	font-size: 35px;
+	color: rebeccapurple;
+	cursor: pointer;
+}
+.clear{
+	font-size: 32px;
+	color: rebeccapurple;
+	cursor: pointer;
+}
+.penWidth{
+	font-size: 28px;
+	color: rebeccapurple;
+	cursor: pointer;
+}
+.widthContainer{
+	position: absolute;
+	bottom: 0px;
+	width: 80px;
+	background-color: white;
+	opacity: 1;
+	padding: 10px;
+	left: 50%;
+	margin-left: 60px;
+	border:1px solid black;
+	border-radius: 4px;
+}
+.colorContainer{
+	position: absolute;
+	bottom: 0px;
+	width: 380px;
+	background-color: white;
+	opacity: 1;
+	padding: 10px;
+	left: 50%;
+	margin-left: 20px;
+}
+.oneColor{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	float: left;
+	margin:10px;
+}
+.game-result{
+	width: 400px;
+	height: 350px;
+	top: 50%;
+	left: 50%;
+	margin-top: -175px;
+	margin-left: -200px;
+}

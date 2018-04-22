@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iDraw</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="./dist.min/css/paint.log.min.css">
+</head>
+<body>
+<div id="loading" class="loading">
+	<div id="loading-center">
+		<div id="loading-center-absolute">
+			<div class="object" id="object_one"></div>
+			<div class="object" id="object_two"></div>
+			<div class="object" id="object_three"></div>
+			<div class="object" id="object_four"></div>
+			<div class="object" id="object_five"></div>
+			<div class="object" id="object_six"></div>
+			<div class="object" id="object_seven"></div>
+			<div class="object" id="object_eight"></div>
+			<div class="object" id="object_nine"></div>
+		</div>
+	</div>
+</div>
+	<div class="page-container">
+		<h1 class="server-head">H5 IDraw</h1>
+		<div class="form">
+			<div class="formRaio">
+				<input type="radio" name="server" id="server1" value="server1" checked="checked">
+				<label for="server1"></label>
+				<span>服务区一</span>
+			</div>
+			<div class="formRaio">
+				<input type="radio" name="server" id="server2" value="server2">
+				<label for="server2" ></label>
+				<span>服务区二</span>
+			</div>
+			<button id="selectServer" class="select-server">确认选择大区</button>
+		</div>
+	</div>
+
+	<script src="./src/js/utilJs/util.js"></script>
+	<script>
+        window.onload = function() {
+            var img = new Image();
+            img.src = './img/back.jpg';
+            if(img.complete){
+                dom.hide(dom.query('#loading'));
+			}
+            img.onload = function () {
+                dom.hide(dom.query('#loading'));
+            };
+
+            var selectServer = document.getElementById('selectServer');
+            var obj=document.getElementsByName("server");
+            var chkObjs=null;
+            selectServer.onclick = function(){
+                for (var i=0;i<obj.length;i++){
+                    if(obj[i].checked){
+                        chkObjs=obj[i].value;
+                    }
+                }
+                util.ajax({
+                    url : '/selectServer',
+                    type : 'post',
+                    data : {
+                        serverName : chkObjs
+                    },
+                    success : function(data){
+                        if(data === '选择成功'){
+                            window.location.href= window.location.origin + '/';
+                        }
+                    }
+                });
+            }
+        };
+	</script>
+</body>
+</html>

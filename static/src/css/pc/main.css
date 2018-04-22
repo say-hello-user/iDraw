@@ -1,0 +1,64 @@
+.paint{
+	height: 100%;
+}
+.header{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+.top-menu{
+	display: none;
+}
+.nav-icon-con{
+	float: right;
+	line-height: 100px;
+	height: 100px;
+	margin-left: 50px;
+	width: 60px;
+	right: 50px;
+	position: relative;
+	cursor: pointer;
+}
+.topIcon{	
+	font-size: 40px;
+	margin-left: 10px;
+}
+.topP{
+	position: absolute;
+	top: 30px;
+	font-size:12px;
+	text-align: center;
+	width: 60px;
+	text-align: center;
+	font-weight: 900;
+}
+.currentSer{
+	color: white;
+	font-size: 20px;
+	font-weight: 900;
+	text-align: center;
+}
+.select-room{
+	height: 80vh;
+	border: 3px solid yellow;
+}
+
+.modal{
+	left: 50%;
+	margin-top: -228px;
+	margin-left: -329px;
+	width: 658px;
+	height: 457px;
+}
+
+.modalHeader{
+	margin-top: 55px;
+}
+.modalTitle{
+	font-size: 20px;
+}
+.modalClose{
+	right: 30px;
+	top: 0px;
+	font-size: 25px;
+}

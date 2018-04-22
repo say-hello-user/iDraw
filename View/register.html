@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iDraw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_478228_gk1poktyhfnfusor.css">
+    <link rel="stylesheet" href="./dist.min/css/paint.log.min.css">
+</head>
+<body>
+<div id="loading" class="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+            <div class="object" id="object_five"></div>
+            <div class="object" id="object_six"></div>
+            <div class="object" id="object_seven"></div>
+            <div class="object" id="object_eight"></div>
+            <div class="object" id="object_nine"></div>
+        </div>
+    </div>
+</div>
+<div class="page-container reg-container">
+    <h1>IDraw Reg</h1>
+    <form action="/regNewUser" enctype="multipart/form-data" method="post" class="form">
+        <div class="formInput"><input type="text" name="email"   placeholder="邮箱" onblur="valid(this,'email')"></div>
+        <div class="formInput"><input type="text" name="userName" onblur="valid(this,'userName')" placeholder="游戏名称"></div>
+        <div class="formInput"><input type="password" name="password" onblur="valid(this,'passWord')"  placeholder="密码"></div>
+        <div class="formInput"><input type="password" name="againPass"  onblur="valid(this,'againPass')" placeholder="再次输入密码"></div>
+        <a href="javascript:;" class="file">选择头像
+            <input type="file" onchange="preview(this);" name="uploadFile"/>
+        </a>
+        <div class="container" id="container"></div>
+        <span id="filePath"></span>
+        <input type="submit"  value="注册"/>
+    </form>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="https://cdn.bootcss.com/jsencrypt/3.0.0-beta.1/jsencrypt.js"></script>
+<script src="./src/js/utilJs//util.js"></script>
+<script src="./src/js/reg.js"></script>
+</body>
+</html>

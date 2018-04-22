@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iDraw</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_478228_cwt20v8nv5gn9udi.css">
+	<link href="./src/css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" href="./src/css/common/loading.css">
+	<script src="./dist.min/js/loadCss.min.js"></script>
+</head>
+<body>
+
+<div id="loading" class="loading">
+	<div id="loading-center">
+		<div id="loading-center-absolute">
+			<div class="object" id="object_one"></div>
+			<div class="object" id="object_two"></div>
+			<div class="object" id="object_three"></div>
+			<div class="object" id="object_four"></div>
+			<div class="object" id="object_five"></div>
+			<div class="object" id="object_six"></div>
+			<div class="object" id="object_seven"></div>
+			<div class="object" id="object_eight"></div>
+			<div class="object" id="object_nine"></div>
+		</div>
+	</div>
+</div>
+
+	<div id="paint" class = "paint">
+		<div id="header" class="header animated fadeIn">
+			<div class="top-menu">
+				<span>iPaint</span>
+				<div><i class="iconfont icon-zhankai" ></i></div>
+			</div>
+			<p class="currentSer" id="currentSer"></p>
+			<div class="nav-icon-con" data-action="cancle">
+				<i class="iconfont icon-zhuxiao topIcon" style = 'color:rgb(255,221,68);'></i>
+				<p class="topP" style = 'color:rgb(255,221,68);'>注销</p>
+			</div>
+		    <div class="nav-icon-con" data-action="userData">
+					<i class="iconfont icon-gerenxinxi topIcon" style = 'color:rgb(230,21,16);'></i>
+					<p class="topP" style = 'color:rgb(255,221,68);'>个人信息</p>
+			</div>
+			<div class="nav-icon-con" data-action="rank">
+					<i class="iconfont icon-paihangbang topIcon" style = 'color:rgb(226,211,178);'></i>
+					<p class="topP" style = 'color:rgb(255,194,70);'>排行榜</p>
+			</div>
+			<div class="nav-icon-con" data-action="reward">
+					<i class="iconfont icon-riqi topIcon" style = 'color:rgb(94,213,208);'></i>
+					<p class="topP" style = 'color:rgb(94,213,208);'>每日奖励</p>
+			</div>
+			<div class="nav-icon-con" data-action="store">
+					<i class="iconfont icon-shangcheng1 topIcon" style = 'color:rgb(194,25,34);'></i>
+					<p class="topP" style = 'color:rgb(230,230,230);'>商城</p>
+			</div>
+			<div class="nav-icon-con" data-action="pack">
+					<i class="iconfont icon-ziyuan topIcon" style = 'color:rgb(169,134,76);'></i>
+					<p class="topP" style = 'color:rgb(230,230,230);'>背包</p>
+			</div>
+			<div class="nav-icon-con" data-action="gallery">
+					<i class="iconfont icon-hualang1 topIcon" style = 'color:rgb(255,221,68);'></i>
+					<p class="topP" style = 'color:rgb(255,221,68);'>画廊</p>
+			</div>
+		</div>
+		
+		<div id="selectRoom" class="select-room"></div>
+
+		<div id="gameCenter" class="game-center hide">
+		    <i class="iconfont icon-ready gc-ready-icon" id="ready"><span class="gc-top-text">准备</span></i>
+			<i class="iconfont icon-likaifangjian gc-close-icon" id="roomClose"><span class="gc-top-text">离开房间</span></i>
+
+			<div class="paint-main hide" id="paintMain">
+				<div class="cur-data">
+					<div class="keyWord" id="keyWord"></div>
+				</div>
+
+				<div class="paint-detail">
+					<div class="msgList" id="msgList"></div>
+
+					<canvas height="400" width="600" style="background-color: white;" class="paintCanvas">
+						Sorry, Your Browser don't support canvas of Html5.
+					</canvas>
+
+					<div class="gameUser" id="gameUser"></div>
+				</div>
+
+				<div class="draw-util hide">
+					<div><i class="iconfont icon-huabi1 myPen" id="pen" title="画笔"></i></div>
+					<div><i class="iconfont icon-xiangpica myErase" id="erase" title="橡皮擦"></i></div>
+					<div><i class="iconfont icon-qingkongshanchu clear" id="clear" title="清空画布"></i></div>
+					<div><i class="iconfont icon-zitiyanse myColor" id="myColor" title="颜色"></i></div>
+					<div><i class="iconfont icon-line penWidth" id="penWidth" title="画笔粗细"></i></div>
+					<div><i class="iconfont icon-jiaoyiloudou addTime" id="addTime" title="加时卡"></i></div>
+					<div><i class="iconfont icon-exchangejiaohuan changeWord" id="changeWord" title="换词卡"></i></div>
+				</div>
+				<div id='leftTime' class="leftTime"></div>
+		    </div>
+						  
+			<div id="userList" class="userList show">
+				<div class="user"><i class="iconfont icon-huabi"></i><div class="userBottom"></div></div>
+				<div class="user"><i class="iconfont icon-huabi"></i><div class="userBottom"></div></div>
+				<div class="user"><i class="iconfont icon-huabi"></i><div class="userBottom"></div></div>
+				<div class="user"><i class="iconfont icon-huabi"></i><div class="userBottom"></div></div>
+			</div>
+
+			<div id="showDraw" class = "showDraw hide"><span class="allRightText">全部回答正确</span>
+			</div>
+
+			<div class="room-oper">
+				<i class="iconfont icon-suo1" id="lock"><span>房间加密</span></i>
+                <i class="iconfont icon-yaoqing" id="sendInvate"><span>发送游戏邀请</span></i>
+			</div>
+
+			<div class="message" id="message">
+				<input type="text" class="sendInput" placeholder="请输入您想发送的词">
+				<i class="iconfont icon-ttpodicon send"></i>
+			</div>
+		</div>
+	</div>
+	<div class="back hide" id="back"></div>
+
+    <script src="./dist/js/paint.js"></script>
+
+	<script>
+         cache.add('userName',decodeURI("<%=userName%>"));//将用户用户名写入本地缓存
+		 cache.add('email',decodeURI("<%=email%>"));//将用户email写入本地缓存
+         cache.add('serverName',decodeURI("<%=serverName%>"));//将客户选择的大区写入缓存
+	</script>
+	<script src="./src/js/main.js"></script>
+    <script href="javascript:;" type="text/javascript" src="./src/js/pluginJs/iShare_tidy.js"></script>
+</body>
+</html>
